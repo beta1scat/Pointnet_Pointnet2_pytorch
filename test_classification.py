@@ -97,6 +97,7 @@ def main(args):
     num_class = args.num_category
     model_name = os.listdir(experiment_dir + '/logs')[0].split('.')[0]
     model = importlib.import_module(model_name)
+    log_string(f'Load model: {model_name}')
 
     classifier = model.get_model(num_class, normal_channel=args.use_normals)
     if not args.use_cpu:
