@@ -30,7 +30,7 @@ def parse_args():
     parser.add_argument('--gpu', type=str, default='0', help='specify gpu device')
     parser.add_argument('--batch_size', type=int, default=24, help='batch size in training')
     parser.add_argument('--model', default='pointnet_cls', help='model name [default: pointnet_cls]')
-    parser.add_argument('--num_category', default=10, type=int, help='the number of class category')
+    parser.add_argument('--num_category', default=5, type=int, help='the number of class category')
     parser.add_argument('--epoch', default=200, type=int, help='number of epoch in training')
     parser.add_argument('--learning_rate', default=0.001, type=float, help='learning rate in training')
     parser.add_argument('--num_point', type=int, default=1024, help='Point Number')
@@ -116,7 +116,7 @@ def main(args):
 
     '''DATA LOADING'''
     log_string('Load dataset ...')
-    data_path = 'data/BGSPCD/'
+    data_path = '/home/niu/Documents/dataset/BGSPCD/'
 
     train_dataset = BGSPCDDataLoader(root=data_path, args=args, split='train', process_data=args.process_data)
     test_dataset = BGSPCDDataLoader(root=data_path, args=args, split='test', process_data=args.process_data)
@@ -125,7 +125,7 @@ def main(args):
 
     '''MODEL LOADING'''
     log_string('Load model ...')
-    num_class = 10
+    num_class = args.num_category
     model = importlib.import_module(args.model)
     shutil.copy('./models/%s.py' % args.model, str(exp_dir))
     shutil.copy('models/pointnet2_utils.py', str(exp_dir))
