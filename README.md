@@ -48,6 +48,7 @@ You can run different modes with following codes.
 ## e.g., pointnet2_ssg without normal features
 python train_classification.py --model pointnet2_cls_ssg --log_dir pointnet2_cls_ssg
 python train_classificationBGSPCD.py --model pointnet2_cls_ssg --log_dir pointnet2_cls_ssg_bgspcd
+python train_classificationBGSPCD.py --model pointnet2_cls_ssg --log_dir pointnet2_cls_ssg_bgspcd --use_normals --use_uniform_sample
 python test_classification.py --log_dir pointnet2_cls_ssg
 
 ## e.g., pointnet2_ssg with normal features
