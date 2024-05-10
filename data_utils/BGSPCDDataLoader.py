@@ -56,7 +56,7 @@ def parse_args():
     parser.add_argument('--num_category', default=3, type=int, help='training on BGSPCD')
     parser.add_argument('--epoch', default=200, type=int, help='number of epoch in training')
     parser.add_argument('--learning_rate', default=0.001, type=float, help='learning rate in training')
-    parser.add_argument('--num_point', type=int, default=5000, help='Point Number')
+    parser.add_argument('--num_point', type=int, default=2000, help='Point Number')
     parser.add_argument('--optimizer', type=str, default='Adam', help='optimizer for training')
     parser.add_argument('--log_dir', type=str, default=None, help='experiment root')
     parser.add_argument('--decay_rate', type=float, default=1e-4, help='decay rate')
